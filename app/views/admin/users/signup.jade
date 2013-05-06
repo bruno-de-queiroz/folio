@@ -1,0 +1,11 @@
+extends ../layouts/default
+
+block mid-content
+  form(action="/admin/users/add", method="post", enctype="multipart/form-data")
+    input(type='file', name="picture")
+    input#name(type='text', name="name", placeholder="#{__('First name')}", value=user.name)
+    input#email(type='text', name="email", placeholder="#{__('Email')}", value=user.email)
+    input#username(type='text', name="username", placeholder="#{__('Username')}", value=user.username)
+    input#password(type='password', name="password", placeholder="#{__('Password')}")
+    button.button.green(type='submit') #{__('Sign up')}
+    a.button.purple(href="/admin/login") #{__('login')}

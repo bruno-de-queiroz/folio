@@ -1,0 +1,29 @@
+extends ../layouts/default
+
+block mid-content
+	section#login
+		header
+			h1 #{__('Login')}
+		form.login.form-horizontal(action="/admin/users/session", method="post")
+
+			input#username(type='text', name="username", placeholder="#{__('User')}")
+			input#password(type='password', name="password", placeholder="#{__('Password')}")
+
+			if (typeof errors !== 'undefined')
+				.fade.in.alert.alert-block.alert-error
+					a.close(data-dismiss="alert", href="javascript:void(0)") x
+						ul
+							each error in errors
+								li= error.type
+			if ( message != "")
+				p.message
+					i.icon.warning-sign
+					| #{message}
+
+			button.green(type='submit') #{__('Enter')}
+	section#signup
+		header
+			h1 #{__('Signup')}
+		p use one of the providers below to sign up as a noder account.
+		each provider in providers
+			a.button(class=provider,href="/admin/auth/"+provider) #{__("use "+provider)}

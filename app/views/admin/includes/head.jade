@@ -1,0 +1,18 @@
+head
+	meta(charset='utf-8')
+	meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+	meta(name='viewport', content='width=device-width,initial-scale=1')
+
+	title= appName + ' - ' + title
+	meta(http-equiv='Content-type', content='text/html;charset=UTF-8')
+	meta(name="description", content="")
+
+	link(href='/favicon.ico', rel='shortcut icon', type='image/x-icon')
+	link(rel='stylesheet', href='/admin/css/libs/mCustomScrollbar/jquery.mCustomScrollbar.css')
+	link(rel='stylesheet', href='/admin/css/libs/jwysiwyg/jquery.wysiwyg.css')
+	link(rel='stylesheet', href='/admin/css/main.css')
+	script(src='/admin/js/libs/socket.io/socket.io.min.js')
+	block styles
+
+	//if lt IE 9
+		script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')

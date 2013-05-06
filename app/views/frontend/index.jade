@@ -1,0 +1,69 @@
+extends layouts/default
+
+block mid-content
+
+	section#work-gallery
+		ul
+			- var images = [ "/frontend/img/thumb.png" , "/frontend/img/thumb1.png", "/frontend/img/thumb2.png" , "/frontend/img/thumb3.png" ]
+			- for (var i = 0; i < 27; ++i) {
+			li
+				article
+					a(href="#",title="Ver mais")
+						i.icon-search
+					figure
+						img(src="#{helpers.random(images)}")
+			- }
+
+	section#about
+		br
+		br
+		br
+		br
+		br
+		br
+		br
+		h1 Hi!
+		h2 i'm a web developer and designer based in <strong>São Paulo, BR</strong>.
+
+		p I'm graduated in <strong>Advertising</strong>, and have an unfinished degree in <strong>Cinema</strong>, not the most obvious formation for a web developer. 
+			br
+			br
+			| I started as an ordinary designer who wanted his works to look great, so i pushed myself to web development area where the <strong>real magic happens</strong>.
+			| Skilled in <strong>NodeJs</strong>, PHP frameworks such as <strong>Code Igniter</strong> and <strong>Zend</strong>, a good programmer in <strong>Java</strong><em>(J2EE - Spring MVC)</em>, and novice in <strong>Phyton</strong><em>(Django)</em> and <strong>Ruby</strong><em>(Rails)</em>, i'm always looking for better approachs to make great applications.
+			br
+			br
+			| Multi-disciplined, i've worked in all areas of interactive media and web development, from art director, to software architect, passing through video editing and database modeling.
+
+		ul#skills
+			- var skills = ["Restful architecture","SOA architecture", "MongoDB" ,"MySQL" ,"MsSQL", "Node.js", "Express.js","Socket.io", "Jasmine", "Yeoman", "Jade","Ember.js","jQuery","CSS 3","Stylus/Less/Sass", "HTML 5","CodeIgniter","Zend Framework","PHP","Spring MVC","JSF","JPA","Hibernate","Flash","ActionScript 3","Flex","Photoshop","Illustrator","3D Studio Max","After Effects","Premiere"]
+			- for (var i = 0,j=skills.length; i < j; ++i) {
+				li
+					span #{skills[i]}
+			- }
+	section#contact-info
+		br
+		br
+		br
+		br
+		br
+		br
+		h1 Send me a message!
+		form(action="/send",method="post")
+			
+			div.info
+				h2 Bruno de Queiroz Silva
+				h3 creativelikeadog@gmail.com
+				p
+					i.icon-phone
+					| +55 11 97960.7239
+					br
+					| São Paulo, SP
+					br
+					| Brazil
+
+			fieldset
+				input(name="name",type="text",placeholder="Enter your name")
+				input(name="email",type="text",placeholder="Enter your e-mail")
+				textarea(name="message",placeholder="Send me a message")
+			
+			button(type="submit") Send

@@ -1,0 +1,35 @@
+header#left-header
+	h1#logo Noder
+	if(req.user)
+		section#user-info
+			figure.picture
+				if(req.user.picture.small)
+					img(src=req.user.picture.small, width=50, height=50)
+				else
+					i.icon.plus.add-image
+			div.info
+				h2 #{req.user.name}
+				ul#tools
+					li
+						a(href="/admin/users/"+req.user._id, title=__("Settings"))
+							i.icon.cog
+					li
+						a(href="/admin/logout",title=__("Logout"))
+							i.icon.off
+				p.overview
+					a(href="/admin/articles",title=__("Articles"))
+						i.icon.file-alt
+						| &nbsp;#{req.user.meta.total}&nbsp;
+						em #{__("articles")}&nbsp;&nbsp;
+					a(href="/admin/articles#comments",title=__("Comments"))
+						i.icon.comment
+						| &nbsp;#{req.user.meta.comments}&nbsp;
+						em #{__("comments")}&nbsp;&nbsp;
+					a(href="/admin/articles#shares",title=__("Shares"))
+						i.icon.share
+						| &nbsp;#{req.user.meta.shares}&nbsp;
+						em #{__("shares")}&nbsp;&nbsp;
+					a(href="/admin/articles#likes",title=__("Likes"))
+						i.icon.thumbs-up
+						| &nbsp;#{req.user.meta.likes}&nbsp;
+						em #{__("likes")}&nbsp;&nbsp;

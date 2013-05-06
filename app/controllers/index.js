@@ -4,12 +4,17 @@ var prefix = ''
 module.exports = function(app) {
 
 	var index = function(req,res){
-		res.render( 'index', {
-			title: app.locals.__('Welcome')
+		res.render( 'frontend/index', {
+			title: app.locals.__('Folio')
 			, pageName: "Welcome"
 		})
 	};
 
-	app.get("/"+prefix,index);
+	var admin = function(req,res){
+		res.redirect('/admin/articles');
+	};
+
+	app.get("/",index);
+	app.get("/admin",admin);
 
 }
