@@ -1,0 +1,51 @@
+!!! 5
+html(lang='en', xmlns='http://www.w3.org/1999/xhtml')
+	include ../includes/header
+	body(class=pageName+"-page")
+		if (typeof errors !== 'undefined')
+				aside#messages
+					a.close(data-dismiss="alert", href="javascript:void(0)") x
+					ul
+						each error in errors
+							li= error.type
+
+		header#logo
+			h1 BRUNO<br/> DE QUEIROZ
+			h2 WEB DEVELOPER
+			h3 and a passionate designer
+
+		nav#menu
+			ul
+				li#work 
+					i.icon-bookmark
+					a(href="#work-gallery",title="work") 
+						| work
+				li#aboutme
+					i.icon-user
+					a(href="#about",title="about me") 
+						| about me
+				li#contact
+					i.icon-phone
+					a(href="#contact-info",title="contact") 
+						| contact
+
+			aside#social
+				a(href="http://pinterest.com/brunoqs/", title="pinterest", target="_new")
+					i.icon-pinterest
+				a(href="http://facebook.com/brunodequeiroz", title="facebook", target="_new")
+					i.icon-facebook
+				a(href="https://twitter.com/brunoqs", title="twitter", target="_new")
+					i.icon-twitter
+				a(href="http://www.linkedin.com/profile/view?id=216054525", title="linkedin", target="_new")
+					i.icon-linkedin
+				a(href="http://github.com/creativelikeadog", title="github", target="_new")
+					i.icon-github
+
+
+		section#main-content
+			block mid-content
+
+
+		script(type="text/javascript", src="/js/jquery.2.0.min.js")
+		script(type="text/javascript", src="/js/folio.js")
+		//include ../includes/footer

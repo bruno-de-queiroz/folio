@@ -1,0 +1,770 @@
+@import 'nib'
+@import 'nib/gradients'
+@import fonts
+@import icons
+global-reset()
+
+main-color = rgb(78, 74, 157)
+content-color = rgb(144,244,244)
+green-color = rgb(2, 160, 65)
+pink-color = rgb(233, 37, 123)
+black-color = rgb(36, 26, 30)
+header-height = 40px
+name-font = 'Rokkitt', serif
+base-font = 'Quicksand', sans-serif
+script-font = 'Satisfy', cursive
+text-font = "Quicksand", sans-serif
+
+p 
+	font-family text-font
+	text-transform uppercase
+
+@keyframes slide-up
+	0% 
+		top 100%
+		margin-top:16.0em
+		bottom 0
+		border-top 30.0em solid darken(main-color,30)
+		box-shadow 0px -15.0em 0.1em darken(main-color,40)
+	100%
+		top 0
+		bottom 0
+		margin-top 0
+		border-top 0 solid darken(main-color,30)
+		box-shadow 0px 0em 0px darken(main-color,40)
+
+@keyframes slide-up-content
+	0% 
+		top 100%
+		margin-top:160px
+		bottom 0
+		border-top 300px solid lighten(content-color,10)
+		box-shadow 0px -150px 1px lighten(content-color,20)
+	100%
+		top 0%
+		bottom 0
+		margin-top 0
+		border-top 0px solid lighten(content-color,10)
+		box-shadow 0px 0px 0px lighten(content-color,20)
+
+@keyframes slide-up-footer
+	0% 
+		top 100%
+		margin-top:160px
+		bottom 0
+		border-top 300px solid lighten(main-color,10)
+		box-shadow 0px -150px 1px lighten(main-color,20)
+	100%
+		top 95%
+		bottom 0
+		margin-top 0
+		border-top 0px solid lighten(main-color,10)
+		box-shadow 0px 0px 0px lighten(main-color,20)
+
+@keyframes slide-up-title
+	0% 
+		clip rect(2.8em,5.5em,2.8em,0)
+	100%
+		clip rect(0,5.5em,2.8em,0)
+
+@keyframes slide-down-title
+	0% 
+		font-size 5.2em
+		clip rect(0,5.5em,1.6em,0)
+		margin-left -2.5em
+		opacity 1
+	10%
+		font-size 3.2em
+		clip rect(0,5.5em,2.0em,0)
+		margin-left -2.65em
+	20%
+		font-size 3.4em
+		clip rect(0,5.5em,1.9em,0)
+		margin-left -2.6em
+	30%
+		font-size 3.8em
+		clip rect(0,5.5em,1.85em,0)
+		margin-left -2.55em
+	45%
+		font-size 3.4em
+		clip rect(0,5.5em,1.95em,0)
+		margin-left -2.6em
+	100%
+		font-size 3.4em
+		clip rect(0,5.5em,3.0em,0)
+		margin-left -2.6em
+		opacity 1
+
+@keyframes slide-up-band
+	0%
+		opacity 0
+		background-color #FFF
+		text-shadow 0 0 0 #FFF
+	20%
+		opacity 1
+		text-shadow 0 0 0 #FFF
+	100%
+		opacity 1
+		background-color lighten(main-color,10)
+		text-shadow 0.1em 0.1em 0 darken(main-color,20)
+
+@keyframes slide-up-band-border
+	0%
+		opacity 0
+		border-top 1.0em solid #FFF
+		border-bottom 1.0em solid #FFF
+	20%
+		opacity 1
+	100%
+		opacity 1
+		border-top 1.0em solid lighten(main-color,8)
+		border-bottom 1.0em solid lighten(main-color,8)
+		
+@keyframes write-design
+	0%
+		clip rect(0,0,1.4em,0)
+	100%
+		clip rect(0,9.8em,1.4em,0)
+
+@keyframes slide-down
+	0%
+		top 0
+		bottom 0
+		margin-top 0
+		border-top 0px solid #bef9f9
+		box-shadow 0px 0px 0px lighten(main-color,20)
+	100% 
+		top 100%
+		margin-top:160px
+		bottom 0
+		border-top 300px solid lighten(main-color,10)
+		box-shadow 0px -150px 1px lighten(main-color,20)
+		display none
+
+@keyframes slide-up-light
+	0% 
+		bottom 0
+	50% 
+		top 0
+		bottom 0
+	100%
+		top 0
+		bottom 100%
+
+@keyframes flip
+	0%
+		transform rotateX(90deg);
+		transform-origin 0 0
+	100%
+		transform rotateX(0deg);
+		transform-origin 0 0
+
+@keyframes menu-slide
+	0%
+		background darken(main-color,35)
+		transform rotateX(-90deg)
+		transform-style preserve-3d
+		transform-origin 0 0
+		opacity 0
+	66%
+		background none
+		transform rotateX(45deg)
+		transform-origin 0 0
+		opacity 1
+	100%
+		background none
+		transform rotateX(0deg)
+		transform-origin 0 0
+		opacity 1
+
+@keyframes menu-slide-even
+	0%
+		background darken(main-color,35)
+		transform rotateX(90deg)
+		transform-style preserve-3d
+		transform-origin 0 0
+		opacity 1
+	100%
+		background none
+		transform rotateX(0deg)
+		transform-origin 0 0
+		perspective 0
+		opacity 1
+
+@keyframes social-slide 
+	0%
+		transform rotateX(90deg)
+		transform-style preserve-3d
+		transform-origin 0 0
+		opacity 1
+	100%
+		transform rotateX(0deg)
+		transform-origin 0 0
+		perspective 0
+		opacity 1
+
+html 
+	background-color darken(main-color,50)
+
+body
+	font-family Arial
+	font-size 62.5%
+	background-color darken(main-color,50)
+	overflow hidden
+
+#main-header
+	animation slide-up .8s ease-in-out
+	animation-fill-mode forwards
+	padding 10px
+	background main-color
+	position absolute
+	left 0
+	right 0
+	top 0
+	bottom 0
+	border-top 0px solid transparent
+	box-shadow 0px 0px 0px transparent
+	h1
+		font-size 14px
+
+
+#logo 
+	width 25.0em
+	height 18em
+	overflow hidden
+	margin 0 auto
+	font-size 1.1em
+	position absolute
+	cursor pointer
+	left 0.56em
+	top 0
+	z-index 1
+	&:hover h2
+		background-color lighten(main-color,15)
+		transition all .2s
+		&:before, &:after 
+			border-top-color lighten(main-color,10)
+			border-bottom-color lighten(main-color,10)
+			transition all .2s
+	h1
+		animation slide-down-title 0.8s
+		animation-delay .7s
+		animation-fill-mode forwards
+		font-size 3.4em
+		clip rect(0,5.5em,2.2em,0)
+		margin-left -2.6em
+		padding 1em 0
+		left 50%
+		display block
+		opacity 0
+		font-family name-font
+		color white
+		text-shadow 0.1em 0.1em 0 darken(main-color,20)
+		text-align center
+		position absolute
+		&:first-line
+			font-size 1.65em
+			font-weight bold
+			line-height 0.5em
+			opacity 0
+	h2 
+		transition all .2s
+		animation slide-up-band .5s ease-in-out
+		animation-delay 1.3s
+		animation-fill-mode backwards
+		font-weight light
+		border-bottom .1em solid lighten(main-color,10)
+		box-shadow 0 .1em 0 darken(main-color,10)
+		display inline-block
+		color white
+		padding .5em 1.0em
+		font-family base-font
+		text-shadow 0.1em 0.1em 0 darken(main-color,20)
+		position absolute
+		top 5.5em
+		left 50%
+		font-size 1.8em
+		margin-left -5.3em
+		background lighten(main-color,10)
+		z-index 5
+		&:before
+			animation slide-up-band-border .5s ease-in-out
+			animation-delay 1.35s
+			width 10px
+			height 0 
+			border-top 1.0em solid lighten(main-color,8)
+			border-bottom 1.0em solid lighten(main-color,8)
+			border-left 1.0em solid transparent
+			box-shadow 0 .1em 0 darken(main-color,10)
+			position absolute
+			content ''
+			display block
+			top 0.3em
+			left -1.4em
+			z-index -2
+			transition all .2s
+		&:after
+			animation slide-up-band-border .5s ease-in-out
+			animation-delay 1.35s
+			width 10px
+			height 0 
+			border-top 1.0em solid lighten(main-color,8)
+			border-bottom 1.0em solid lighten(main-color,8)
+			border-right 1.0em solid transparent
+			box-shadow 0 .1em 0 darken(main-color,10)
+			position absolute
+			content ''
+			display block
+			top 0.3em
+			right -1.5em
+			z-index -1
+			transition all .2s
+
+	h3 
+		animation write-design .5s ease-in-out
+		animation-fill-mode backwards
+		animation-delay 1.55s
+		clip rect(0,9.8em,1.4em,0)
+		font-size 1.75em
+		display block
+		font-family script-font
+		color white
+		font-weight lighter
+		position absolute
+		left 50%
+		top 7.95em
+		margin-left -4.8em
+		text-shadow 0.1em 0.1em 0 darken(main-color,20)
+
+#menu
+	position absolute
+	left 0.5em
+	top 22em
+	color #fff
+	text-align left
+	width 28.0em
+	z-index 1
+	ul 
+		perspective 500px
+		li
+			transition background .2s
+			border-top: 0.1em solid lighten(main-color,5)
+			border-bottom: 0.1em solid darken(main-color,5)
+			transition border .5s ease-in-out
+			position relative
+			&:first-child 
+				border-top none
+				a
+					border-right 0.5em solid main-color
+			&:last-child
+				border-bottom none
+				a
+					border-right 0.5em solid black-color
+			a
+				color white
+				padding 1.0em
+				text-decoration none
+				font-family base-font
+				font-size 1.6em
+				display block
+				position relative
+				border-right 0.5em solid green-color
+				transition border .2s
+			i
+				position absolute
+				font-size 1.6em
+				right .5em
+				top 50%
+				margin-top -0.5em
+				z-index 10
+			&:hover, &.active
+				background darken(main-color,5)
+				transition background .2s
+				a
+					border-right-width 2.2em
+					transition border .2s
+			&:nth-child(1)
+				animation menu-slide .3s ease-in-out
+				animation-delay 1s
+				animation-fill-mode backwards
+			&:nth-child(2)
+				animation menu-slide .3s ease-in-out
+				animation-delay 1.3s
+				animation-fill-mode backwards
+			&:nth-child(3)
+				animation menu-slide .3s ease-in-out
+				animation-delay 1.6s
+				animation-fill-mode backwards
+	aside
+		text-align center
+		margin-top 3.0em
+		animation social-slide .3s ease-in-out
+		animation-delay 1.9s
+		animation-fill-mode backwards
+		a 
+			text-decoration none
+			font-size 1.6em
+			color white
+			padding .5em
+			transition color .3s ease-in-out
+			text-shadow 0em 0.1em 0 darken(main-color,20)
+			&:hover
+				color green-color
+				transition color .3s ease-in-out
+				text-shadow none
+
+#main-content
+	animation slide-up .6s ease-in-out
+	animation-fill-mode backwards
+	perspective 500px
+	box-shadow inset 0 .2em .0em #4e4a9d,inset 0 .3em 0em rgba(255,255,255,0.2)!important
+	position absolute
+	top 0
+	bottom 0
+	left 0
+	right 0
+	margin-top 0
+	border-top 0px solid transparent
+	box-shadow 0px 0px 0px transparent
+	text-align center;
+	z-index 0
+	
+
+
+#main-content.back 
+	animation slide-down .4s ease-in-out
+	animation-fill-mode forwards
+
+
+#work-gallery
+	background-color main-color
+	position relative
+	padding-left 28.0em
+	height 100%
+	overflow-y auto
+	transform-origin 0 0
+	perspective 50.0em
+	z-index 10
+	ul 
+		padding 3em 3.0em 3.0em 0 
+		column-fill auto
+		li 
+			display inline-block
+			vertical-align top
+			width 22.0em
+			padding 1.0em
+			background darken(main-color,5)
+			backface-visibility hidden
+			border-radius .3em
+			margin .5em 0 0 .5em
+			box-shadow 0 0.1em 0 lighten(main-color,5), 0 -.1em 0 darken(main-color,10)
+			position relative
+			&.flip
+				animation flip .3s ease-in-out
+				animation-fill-mode backwards
+			article
+				overflow hidden
+				perspective 0
+				position relative
+				cursor pointer
+				vertical-align top
+				figure
+					padding 0
+					margin 0
+				img
+					width 22.0em
+					margin 0
+					display block
+				a
+					position absolute
+					top 0
+					left 0
+					right 0
+					bottom 0
+					display block
+					opacity 0
+					background rgba(main-color,0.2)
+					z-index 10
+					transform opacity .5s ease-in-out
+					i
+						position absolute
+						top 50%
+						left 50%
+						margin -.5em 0 0 -.5em
+						color white
+						display block
+						border-radius 1.0em
+						font-size 3.0em
+						font-style normal
+						line-height 1.1em
+						text-decoration none
+						box-shadow 0 .02em 0 darken(main-color,10)
+						transition all .2s
+				&:hover
+					a 
+						transition opacity .5s ease-in-out
+						opacity 1
+
+
+
+#contact-info
+	display block
+	padding 0 0 0 28.5em
+	background-color black-color
+	// background-image radial-gradient(circle at 100% 150%, black-color 24%, darken(black-color,2) 25%, darken(black-color,2) 28%, black-color 29%, black-color 36%, darken(black-color,2) 36%, darken(black-color,2) 40%, transparent 40%, transparent),
+	// 	radial-gradient(circle at 0    150%, black-color 24%, darken(black-color,2) 25%, darken(black-color,2) 28%, black-color 29%, black-color 36%, darken(black-color,2) 36%, darken(black-color,2) 40%, transparent 40%, transparent),
+	// 	radial-gradient(circle at 50%  100%, darken(black-color,2) 10%, black-color 11%, black-color 23%, darken(black-color,2) 24%, darken(black-color,2) 30%, black-color 31%, black-color 43%, darken(black-color,2) 44%, darken(black-color,2) 50%, black-color 51%, black-color 63%, darken(black-color,2) 64%, darken(black-color,2) 71%, transparent 71%, transparent),
+	// 	radial-gradient(circle at 100% 50%, darken(black-color,2) 5%, black-color 6%, black-color 15%, darken(black-color,2) 16%, darken(black-color,2) 20%, black-color 21%, black-color 30%, darken(black-color,2) 31%, darken(black-color,2) 35%, black-color 36%, black-color 45%, darken(black-color,2) 46%, darken(black-color,2) 49%, transparent 50%, transparent),
+	// 	radial-gradient(circle at 0    50%, darken(black-color,2) 5%, black-color 6%, black-color 15%, darken(black-color,2) 16%, darken(black-color,2) 20%, black-color 21%, black-color 30%, darken(black-color,2) 31%, darken(black-color,2) 35%, black-color 36%, black-color 45%, darken(black-color,2) 46%, darken(black-color,2) 49%, transparent 50%, transparent)
+	// background-size 5.0em 2.5em
+	height 100%
+	transition top .5s ease-in-out
+	overflow hidden
+	form
+		padding 3.0em 3.0em 3.0em 1.0em
+		border-radius .5em
+		background darken(black-color,2)
+		display inline-block
+		position relative
+
+	div 
+		display inline-block
+		vertical-align middle
+		color white
+		text-align right
+		margin 0 2.0em
+		h2
+			font-family name-font
+			font-size 2.4em
+		h3
+			font-family base-font
+			font-size 1.2em
+			text-transform uppercase
+		p
+			font-size 1.1em
+			line-height 1.6em
+			margin 1.0em 0
+	fieldset
+		display inline-block
+		vertical-align middle
+
+	h1
+		color white
+		font-family script-font
+		font-size 2.8em
+		margin 0 0 1.0em 0
+	input, textarea
+		margin 0 auto .2em auto
+		border-radius .5em
+		background darken(black-color,5)
+		border none
+		padding 1.0em
+		font-family base-font
+		font-size 1.2em
+		transition all .2s
+		text-transform uppercase
+		display block
+		color white
+		min-width 30.0em
+		&:focus
+			outline none
+			background lighten(black-color,5)
+			transition all .2s
+	textarea
+		min-height 10.0em
+		resize none
+	button
+		display block
+		margin 0 auto
+		appearance none
+		border none
+		background none
+		font-family base-font
+		color white
+		background darken(black-color,5)
+		text-transform uppercase
+		cursor pointer
+		font-family 1.0em
+		line-height 3.5em
+		padding 0em 2.0em
+		position absolute
+		bottom -2.0em
+		left 50%
+		margin-left -3.0em
+		transition background .2s
+		&:hover
+			background lighten(black-color,10)
+			transition background .2s
+
+
+#about
+	display block
+	background-color green-color
+	// background radial-gradient(circle at 0% 50%, rgba(green-color, 0) 9px,
+	// darken(green-color,5) 10px, rgba(green-color, 0) 11px) 0px 10px,
+	// radial-gradient(at 100% 100%,     rgba(green-color, 0) 9px, darken
+	// (green-color,5) 10px, rgba(green-color, 0) 11px),             green-
+	// color background-size 2.0em 2.0em
+	padding 0 0 0 28.5em
+	color white
+	width auto
+	height 100%
+	text-align center
+	position absolute
+	top 100%
+	left 0
+	right 0
+	overflow hidden
+	z-index 100
+	transition all .5s ease-in-out
+	h1
+		font-family name-font
+		font-size 10.0em
+		font-weight bold
+		text-shadow 0.03em 0.03em 0 darken(green-color,5)
+		display inline-block
+		vertical-align middle
+	h2
+		display inline-block
+		font-size 1.8em
+		font-family base-font
+		width 12.0em
+		text-align left
+		text-transform uppercase
+		vertical-align middle
+	p 
+		font-size 1.4em
+		text-align justify
+		line-height 1.8em
+		max-width 40.0em
+		margin 2.0em auto
+		strong
+			font-weight bold
+		em
+			font-style italic
+	ul
+		max-width 60.0em 
+		margin 1.0em auto
+		li
+			display inline-block
+			background lighten(green-color,5)
+			border-radius 0.5em 
+			padding 1.0em 
+			margin .5em 0 0 .5em
+			transition background .3s ease-in-out
+			cursor default
+			span 
+				font-size 1.2em
+				font-family script-font
+			&:hover
+				background darken(green-color,5)
+				transition background .3s ease-in-out
+
+body.about
+	#logo
+		h1, h3
+			text-shadow 0.1em 0.1em 0 darken(green-color,15)
+
+	#work-gallery 
+		transform rotateX(90deg)
+		transform-origin 0 0
+		height 0
+		transition all .5s ease-in-out
+	#about
+		top 0
+		transition all .5s ease-in-out
+	#menu
+		ul 
+			li
+				border-top: 0.1em solid lighten(green-color,10)
+				border-bottom: 0.1em solid darken(green-color,5)
+				transition border  .5s ease-in-out
+				&:first-child 
+					border-top none
+				&:last-child
+					border-bottom none
+				&:hover, &.active
+					background darken(green-color,5)
+					transition background .5s
+		aside
+			a
+				&:hover
+					color black-color
+
+
+body.work-gallery
+	#work-gallery 
+		transform rotateX(0deg)
+		transform-origin 0 0
+		height 100%
+		transition all .5s ease-in-out
+		animation-fill-mode backwards
+	#about
+		top 100%
+		transition all .5s ease-in-out
+	#menu
+		aside
+			a
+				&:hover
+					color green-color
+
+body.contact-info
+	#logo
+		h1, h3
+			text-shadow 0.1em 0.1em 0 darken(black-color,5)
+	#work-gallery 
+		transform rotateX(90deg)
+		transform-origin 0 0
+		height 0
+		transition all .5s ease-in-out
+	#about
+		top -100%
+		transition all .5s ease-in-out
+	#contact-info
+		top 0
+		transition top .3s ease-in-out
+		transition-delay .2s
+	#menu
+		ul 
+			li
+				border-top: 0.1em solid lighten(black-color,10)
+				border-bottom: 0.1em solid darken(black-color,5)
+				transition border  .5s ease-in-out
+				&:first-child 
+					border-top none
+				&:last-child
+					border-bottom none
+				&:hover, &.active
+					background darken(black-color,5)
+					transition background .5s
+		aside
+			a
+				&:hover
+					color pink-color
+
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px)
+	@import "ipad"
+
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-width: 1024px) and (max-width: 1230px)
+	@import "default"
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1230px) and (max-width: 1350px)
+	@import "bigger"
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1350px) and (max-width: 1600px)
+	@import "large"
+
+@media only screen and (min-width : 1600px) 
+	@import "x-large"
+
+
+@-moz-document url-prefix()
+	#logo
+		h1
+			line-height 0.8em
